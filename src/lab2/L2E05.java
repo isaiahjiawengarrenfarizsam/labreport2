@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package lab;
+package lab2;
 
 /**Write a program that generates one random number. 
  * The range of the random number is 0 to 10000. 
