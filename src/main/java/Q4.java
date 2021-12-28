@@ -32,7 +32,8 @@ import java.util.Arrays;
                 num = 1; //Re-initialize.
                 
                 //Array 2 initialization.
-                System.out.println("__________________________________________________________________\nPlease enter the elements for Array 2 (Enter \"Yes\" to terminate)"
+                System.out.println("__________________________________________________________________\n"
+                                 + "Please enter the elements for Array 2 (Enter \"Yes\" to terminate)"
                                  + "\n__________________________________________________________________");
                 while (!(counter.equalsIgnoreCase("Yes"))) {
                     System.out.println("Element " + num + " :");
@@ -41,7 +42,9 @@ import java.util.Arrays;
                     counter = sc.next();
                     num++;
                 }
-                if (a1.size() == b1.size()) {
+                //To check whether the size of both arrays are the same.
+                //To check whether either arrays exceeded 10 which is the maximum number of size.
+                if ((a1.size() == b1.size()) && !(a1.size() > 10) && !(b1.size() > 10)) {
                 //Array initialization.
                 int[] a = new int[a1.size()];
                 int[] b = new int[b1.size()];
@@ -54,9 +57,14 @@ import java.util.Arrays;
                     System.out.print("__________________________________________________________________\nArray a: "); printingArray(a);
                     System.out.print("\nArray b: "); printingArray(b);
                 System.out.println("\nThe maximum sum of XOR values for both above arrays is " + maximumxorsum(a,b));}
-                else {
-                System.out.println("Oops. EXCEPTION"); }
-            }
+                
+                else if ((a1.size() > 10) && (b1.size() > 10)) { System.out.println("__________________________________________________________________\n"
+                        + "Seems like the length of your arrays exceeded 10.\nPlease restart the program.");
+                }
+                
+                else { System.out.println("__________________________________________________________________\n"
+                        + "Seems like your arrays are not at the same length.\nPlease restart the program."); }
+                }
             
             //Method to calculate maximum total values of XOR.
             public static int maximumxorsum(int[] a, int[] b) {
@@ -95,6 +103,7 @@ import java.util.Arrays;
                 }
                 return max;
     } 
+                //To print arrays.
                 public static void printingArray (int[] a) {
                     
                     
@@ -108,4 +117,5 @@ import java.util.Arrays;
                             System.out.print(" ,");
                     }
                 }
-    } }
+    } 
+}
