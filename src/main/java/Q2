@@ -1,0 +1,64 @@
+package labreport2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Isaiah&Garren
+ */
+public class LR2Q2{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+       
+       System.out.println("Enter a number"); 
+       int input = in.nextInt(); //gets a number from the user
+       
+       System.out.print(input + " = ");
+       
+       String m = powers2(input); //method call
+       
+       System.out.print(m + "\n");  //prints the result calculated
+      
+    }
+    
+    public static String powers2(int input)
+    {
+        
+        int[]p= new int[20];
+        int i=0, j=0;
+        String result = ("");
+        
+        while(input>0)
+        {
+            p[i++]=input%2;
+            input=input/2;
+            j++;
+        }
+        
+        for(i=0;i<j;i++)
+        {
+            if(p[i]==0)  //invalid value
+            {
+                continue;
+             }       
+            else
+            {
+                if(i==j-1) //print the last element without "+"
+            {
+                    int z = (int) Math.pow(2,i); //typecast double Math.pow(2,i) to int
+                    result += Integer.toString(z); //convert int z to string
+                }   
+                else
+                {
+                    int z = (int) Math.pow(2,i);
+                    result += Integer.toString(z) + " + ";
+                }
+            }
+        }
+        return result;
+    }
+}
